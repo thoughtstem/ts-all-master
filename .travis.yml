@@ -41,9 +41,9 @@ before_script:
 # `raco pkg install --deps search-auto` to install any required
 # packages without it getting stuck on a confirmation prompt.
 script:
- - raco test -x -p ts-all-dev
+ - raco test -x -p ts-all-master
 
 after_success:
- - raco setup --check-pkg-deps --pkgs ts-all-dev
+ - raco setup --check-pkg-deps --pkgs ts-all-master
  - raco pkg install --deps search-auto cover cover-coveralls
  - raco cover -b -f coveralls -d $TRAVIS_BUILD_DIR/coverage .
